@@ -23,7 +23,10 @@
     "gh-pages": "^6.3.0",
     "lucide-react": "^1.43.0",
     "oxlint": "^1.79.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^6.3.289",
     "postcss": "^8.5.28",
+    "qrcode": "^1.5.4",
     "tailwindcss": "^4.3.3",
     "vite": "^8.2.2"
   }

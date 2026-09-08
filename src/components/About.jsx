@@ -22,15 +22,15 @@ const About = () => {
   return (
     <section id="about" className="py-28 bg-[#0B0C0E] relative border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* Visual Column / Studio Visual */}
           <div className="lg:col-span-5 relative reveal-init">
             <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-[4/5] shadow-2xl bg-[#131519] group hover:border-[#E03A3A]/40 transition-all duration-500">
-              <img 
-                src={`${import.meta.env.BASE_URL}thumbnails/video1.jpg`} 
-                alt="Studio de montage Zay" 
+              <img
+                src={`${import.meta.env.BASE_URL}thumbnails/video1.jpg`}
+                alt="Studio de montage Zay"
                 className="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent to-transparent"></div>
@@ -43,7 +43,7 @@ const About = () => {
               VISION & DÉMARCHE
             </span>
             <h2 className="font-serif italic text-4xl sm:text-5xl text-white mt-1 mb-6 font-normal leading-tight">
-              Zay <span className="text-white/40 text-3xl not-italic">— Monteur & Motion Designer</span>
+              Zay <span className="text-white/40 text-3xl not-italic">/ Monteur & Motion Designer</span>
             </h2>
 
             <div className="space-y-4 text-sm sm:text-base text-white/70 font-light leading-relaxed mb-10">
@@ -60,7 +60,7 @@ const About = () => {
               <h3 className="text-xs uppercase tracking-[0.2em] text-white/50 font-semibold">
                 EXPÉRIENCE & COLLABORATIONS
               </h3>
-              
+
               <div className="space-y-6">
                 {experiences.map((item, idx) => (
                   <div key={idx} className="relative pl-6 border-l border-white/10 group hover:border-[#E03A3A] transition-colors">
