@@ -10,7 +10,7 @@ const projectsData = [
     description: "Vidéo personnelle de présentation percutante mettant en valeur mon style de montage, mon univers créatif et ma signature visuelle.",
     role: "Direction créative, Montage, Étalonnage",
     youtubeId: "a_G3Hx99Kwk",
-    thumbnail: "/thumbnails/video1.jpg",
+    thumbnail: `${import.meta.env.BASE_URL}thumbnails/video1.jpg`,
     isShort: false,
     tag: "Présentation"
   },
@@ -23,7 +23,7 @@ const projectsData = [
     description: "Short immersif et éducatif conçu entièrement en motion design, rythmé avec des animations vectorielles précises et du sound design spatial.",
     role: "After Effects, Motion 2D/3D, Sound FX",
     youtubeId: "8hfBgBFFDIg",
-    thumbnail: "/thumbnails/video2.jpg",
+    thumbnail: `${import.meta.env.BASE_URL}thumbnails/video2.jpg`,
     isShort: true,
     tag: "Motion Design"
   },
@@ -36,7 +36,7 @@ const projectsData = [
     description: "Montage publicitaire ultra-rythmé axé sur la rétention d'audience, intégrant titrages dynamiques, zooms et structure de conversion.",
     role: "Montage rétention, Sous-titrage, Rythme",
     youtubeId: "a5WcmkAlVe0",
-    thumbnail: "/thumbnails/video3.jpg",
+    thumbnail: `${import.meta.env.BASE_URL}thumbnails/video3.jpg`,
     isShort: true,
     tag: "Shorts"
   },
@@ -49,7 +49,7 @@ const projectsData = [
     description: "Best-of de stream dynamique avec montage humoristique, découpage rapide, animations et sound design pour une immersion totale.",
     role: "Dérushage, Montage Best-Of, Sound Design",
     youtubeId: "s2YAkoRdJjY",
-    thumbnail: "/thumbnails/video4.jpg",
+    thumbnail: `${import.meta.env.BASE_URL}thumbnails/video4.jpg`,
     isShort: false,
     tag: "Gaming"
   }

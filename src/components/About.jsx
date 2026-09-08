@@ -29,7 +29,7 @@ const About = () => {
           <div className="lg:col-span-5 relative reveal-init">
             <div className="relative rounded-2xl overflow-hidden border border-white/10 aspect-[4/5] shadow-2xl bg-[#131519] group hover:border-[#E03A3A]/40 transition-all duration-500">
               <img 
-                src="/thumbnails/video1.jpg" 
+                src={`${import.meta.env.BASE_URL}thumbnails/video1.jpg`} 
                 alt="Studio de montage Zay" 
                 className="w-full h-full object-cover grayscale contrast-125 opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"
               />

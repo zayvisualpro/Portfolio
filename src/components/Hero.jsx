@@ -37,7 +37,7 @@ const Hero = () => {
         }}
       >
         <img 
-          src="/hero-bg.jpg" 
+          src={`${import.meta.env.BASE_URL}hero-bg.jpg`} 
           alt="Cinematic Urban Background" 
           className="w-full h-full object-cover object-center opacity-65 filter brightness-90 contrast-105"
         />
