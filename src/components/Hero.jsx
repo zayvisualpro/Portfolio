@@ -161,10 +161,22 @@ const Hero = () => {
           {/* Secondary CTA: Projects */}
           <a
             href="#projects"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/25 px-7 py-3.5 rounded-full text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300 hover:scale-105 shadow-xl group"
+            className="relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-white/[0.09] to-white/[0.04] hover:from-white/[0.16] hover:to-white/[0.09] backdrop-blur-xl text-white border border-white/25 hover:border-[#E03A3A]/70 px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.14em] font-medium transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-[0_0_30px_rgba(224,58,58,0.25)] group overflow-hidden"
           >
+            {/* Ambient Shimmer Sweep */}
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none"></span>
+
+            {/* Glowing Mini Play Pill */}
+            <span className="relative w-7 h-7 rounded-full bg-white/10 text-white flex items-center justify-center group-hover:bg-[#E03A3A] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(224,58,58,0.6)] transition-all duration-300 shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" className="ml-0.5">
+                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+              </svg>
+            </span>
+
             <span>Explorer mes Projets</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">
+
+            {/* Gliding Arrow */}
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/60 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-all">
               <line x1="7" y1="17" x2="17" y2="7"></line>
               <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
