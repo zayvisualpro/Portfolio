@@ -7,18 +7,21 @@ async function main() {
   const inputPdfPath = 'C:/Users/anton/OneDrive/Documents/CV_Antony_Raimbault_V3.pdf';
   const backupPdfPath = 'C:/Users/anton/OneDrive/Documents/CV_Antony_Raimbault_V3_backup.pdf';
   
-  if (!fs.existsSync(inputPdfPath)) {
-    console.error('File not found:', inputPdfPath);
+  // Prefer the clean backup if it exists, otherwise use inputPdfPath
+  const sourcePdfPath = fs.existsSync(backupPdfPath) ? backupPdfPath : inputPdfPath;
+
+  if (!fs.existsSync(sourcePdfPath)) {
+    console.error('File not found:', sourcePdfPath);
     process.exit(1);
   }
 
   // Create backup if not already done
-  if (!fs.existsSync(backupPdfPath)) {
+  if (!fs.existsSync(backupPdfPath) && fs.existsSync(inputPdfPath)) {
     fs.copyFileSync(inputPdfPath, backupPdfPath);
     console.log('Backup created at:', backupPdfPath);
   }
 
-  const pdfBytes = fs.readFileSync(inputPdfPath);
+  const pdfBytes = fs.readFileSync(sourcePdfPath);
   const pdfDoc = await PDFDocument.load(pdfBytes);
 
   const helveticaBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
@@ -26,13 +29,13 @@ async function main() {
 
   const portfolioUrl = 'https://zayvisualpro.github.io/Portfolio/';
 
-  // Generate QR code as PNG buffer
+  // Generate QR code with crisp contrast and optimal module sizing
   const qrPngBuffer = await QRCode.toBuffer(portfolioUrl, {
-    errorCorrectionLevel: 'H',
-    margin: 1,
-    width: 300,
+    errorCorrectionLevel: 'M',
+    margin: 2,
+    width: 400,
     color: {
-      dark: '#222222',
+      dark: '#000000',
       light: '#ffffff',
     },
   });
@@ -43,7 +46,7 @@ async function main() {
   const { width: pageWidth, height: pageHeight } = page.getSize();
   console.log(`Page size: ${pageWidth} x ${pageHeight}`);
 
-  // Card geometry
+  // Card geometry matching original design
   // Right aligned with right margin (552.76)
   const cardRight = 552.76;
   const cardWidth = 76;
@@ -158,19 +161,36 @@ async function main() {
 
   const modifiedPdfBytes = await pdfDoc.save();
 
-  // Save to original path
+  // Save to original path in OneDrive
   fs.writeFileSync(inputPdfPath, modifiedPdfBytes);
   console.log('Successfully updated:', inputPdfPath);
 
   // Save to Downloads as well
   const downloadsPath = 'C:/Users/anton/Downloads/CV - Antony Raimbault.pdf';
-  fs.writeFileSync(downloadsPath, modifiedPdfBytes);
-  console.log('Successfully saved copy to:', downloadsPath);
+  try {
+    fs.writeFileSync(downloadsPath, modifiedPdfBytes);
+    console.log('Successfully saved copy to:', downloadsPath);
+  } catch (err) {
+    console.warn('Could not save to downloads:', err.message);
+  }
 
-  // Save to public in Portfolio workspace
-  const portfolioPublicPath = 'd:/Code/1/Portfolio/public/CV_Antony_Raimbault.pdf';
-  fs.writeFileSync(portfolioPublicPath, modifiedPdfBytes);
-  console.log('Successfully saved copy to:', portfolioPublicPath);
+  // Save to public in current workspace "Portfolio - Pro BTS"
+  const currentPublicPath = 'd:/Code/1/Portfolio - Pro BTS/public/CV_Antony_Raimbault.pdf';
+  fs.writeFileSync(currentPublicPath, modifiedPdfBytes);
+  console.log('Successfully saved copy to:', currentPublicPath);
+
+  // Also save to "Portfolio" workspace if it exists
+  const oldPortfolioPublicPath = 'd:/Code/1/Portfolio/public/CV_Antony_Raimbault.pdf';
+  if (fs.existsSync('d:/Code/1/Portfolio/public')) {
+    try {
+      fs.writeFileSync(oldPortfolioPublicPath, modifiedPdfBytes);
+      console.log('Successfully saved copy to:', oldPortfolioPublicPath);
+    } catch (err) {
+      // ignore
+    }
+  }
+
+  console.log('All CV copies updated with fresh QR code pointing to:', portfolioUrl);
 }
 
 main().catch(err => {
