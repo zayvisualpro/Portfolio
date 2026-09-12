@@ -1,6 +1,6 @@
-# Portfolio — Zay
+# Portfolio - Antony Raimbault
 
-Monteur Vidéo & Motion Designer.
+Recherche d'Alternance BTS Audiovisuel (Montage & Post-production).
 
 🌐 **Site en ligne :** [https://zayvisualpro.github.io/Portfolio/](https://zayvisualpro.github.io/Portfolio/)
 

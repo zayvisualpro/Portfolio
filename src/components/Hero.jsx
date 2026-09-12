@@ -112,7 +112,7 @@ const Hero = () => {
         {/* Headline with Cormorant Garamond Serif Italic */}
         <div className="mb-6">
           <p className="text-xs uppercase tracking-[0.35em] text-[#E03A3A] font-semibold mb-3">
-            Antony Raimbault (Zay)
+            Antony Raimbault
           </p>
           <h1 className="font-serif italic font-normal text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.12]">
             Monteur Vidéo & Post-Production <br />

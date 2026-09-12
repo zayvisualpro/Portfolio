@@ -43,7 +43,7 @@ function App() {
             ANTONY RAIMBAULT
           </div>
           <p className="font-light">
-            © {new Date().getFullYear()} Antony Raimbault (Zay) • Recherche d'Alternance BTS Audiovisuel (Montage & Post-production).
+            © {new Date().getFullYear()} Antony Raimbault • Recherche d'Alternance BTS Audiovisuel (Montage & Post-production).
           </p>
           <a href="#home" className="text-white/60 hover:text-white uppercase tracking-widest text-[11px] transition-colors">
             Haut de page ↑
