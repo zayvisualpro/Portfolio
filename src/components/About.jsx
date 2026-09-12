@@ -2,12 +2,12 @@ import React from 'react';
 
 const About = () => {
   const alternanceInfo = [
-    { label: "Formation préparée", value: "BTS Audiovisuel (Montage & Post-production)", icon: "🎓" },
+    { label: "École", value: "Paris'Com Sup", icon: "🏫", highlight: true },
+    { label: "Formation préparée", value: "BTS Audiovisuel (Montage & Post-prod)", icon: "🎓" },
     { label: "Rythme d'alternance", value: "2 jours école / 3 jours en entreprise", icon: "📅", highlight: true },
     { label: "Type de contrat", value: "Apprentissage ou Professionnalisation", icon: "📝" },
     { label: "Zone géographique", value: "Île-de-France (78 / Paris & environs)", icon: "📍" },
     { label: "Disponibilité", value: "Rentrée 2026 / Entretiens dès maintenant", icon: "⚡" },
-    { label: "Âge & Statut", value: "18 ans / Étudiant motivé & rigoureux", icon: "👤" },
   ];
 
   const education = [
@@ -15,7 +15,7 @@ const About = () => {
       period: "2026 - Présent",
       status: "En cours",
       title: "BTS Audiovisuel (Option Montage & Post-production)",
-      institution: "Formation supérieure audiovisuelle",
+      institution: "Paris'Com Sup",
       description: "Apprentissage approfondi des techniques de montage, de la dramaturgie visuelle, des workflows numériques, de l'étalonnage et du mixage sonore."
     },
     {
@@ -71,7 +71,7 @@ const About = () => {
             Antony Raimbault <span className="text-white/40 text-2xl sm:text-3xl not-italic font-sans">/ 18 ans</span>
           </h2>
           <p className="mt-4 text-xs sm:text-sm text-white/60 leading-relaxed font-light">
-            Étudiant en BTS Audiovisuel option Montage et Post-production. Passionné par l'art du montage, le rythme visuel et le storytelling.
+            Étudiant à l'école Paris'Com Sup en BTS Audiovisuel option Montage et Post-production. Passionné par l'art du montage, le rythme visuel et le storytelling.
           </p>
         </div>
 
@@ -142,7 +142,7 @@ const About = () => {
             
             <div className="space-y-4 text-sm sm:text-base text-white/75 font-light leading-relaxed mb-8">
               <p>
-                Actuellement en <strong className="text-white font-medium">BTS Audiovisuel option Montage et Post-production</strong>, je suis à la recherche d'une entreprise pour m'accueillir en alternance à raison de <strong className="text-white font-medium">2 jours d'école et 3 jours en entreprise</strong>.
+                Actuellement à l'école <strong className="text-white font-medium">Paris'Com Sup</strong> en <strong className="text-white font-medium">BTS Audiovisuel option Montage et Post-production</strong>, je suis à la recherche d'une entreprise pour m'accueillir en alternance à raison de <strong className="text-white font-medium">2 jours d'école et 3 jours en entreprise</strong>.
               </p>
               <p>
                 Organisé, rigoureux et courtois, je possède un fort sens du travail en équipe et une grande adaptabilité. Dès 2025, j'ai lancé mon activité en auto-entreprise pour collaborer avec des créateurs YouTube, ce qui m'a permis de développer une réelle autonomie de dérushage, de narration rythmée et de motion design sous <strong className="text-white font-medium">Adobe Premiere Pro</strong> et <strong className="text-white font-medium">After Effects</strong>.

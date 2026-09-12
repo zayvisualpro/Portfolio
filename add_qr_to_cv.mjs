@@ -46,9 +46,36 @@ async function main() {
   const helveticaBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
   const helvetica = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
-  const portfolioUrl = 'https://zayvisualpro.github.io/Portfolio/';
+  // 1. Header: Add school name next to "18 ans" in site red
+  page.drawText("•  École Paris'Com Sup", {
+    x: 184,
+    y: 749.24,
+    size: 9.5,
+    font: helveticaBold,
+    color: rgb(224 / 255, 58 / 255, 58 / 255), // site red #E03A3A
+  });
 
-  // Generate QR code pointing to portfolio with crisp contrast
+  // 2. PARCOURS SCOLAIRE:
+  // Cover the old "En cours" line under "2026 - PRÉSENT"
+  page.drawRectangle({
+    x: 42,
+    y: 262,
+    width: 80,
+    height: 14,
+    color: rgb(1, 1, 1),
+  });
+
+  // Draw "Paris'Com Sup" under 2026 - PRÉSENT, perfectly matching UVSQ and Lycee format
+  page.drawText("Paris'Com Sup", {
+    x: 42.52,
+    y: 266.29,
+    size: 9.5,
+    font: helveticaBold,
+    color: rgb(0.2, 0.2, 0.2),
+  });
+
+  // 3. QR Code Card
+  const portfolioUrl = 'https://zayvisualpro.github.io/Portfolio/';
   const qrPngBuffer = await QRCode.toBuffer(portfolioUrl, {
     errorCorrectionLevel: 'M',
     margin: 2,
@@ -61,10 +88,7 @@ async function main() {
 
   const qrImage = await pdfDoc.embedPng(qrPngBuffer);
 
-  const { width: pageWidth, height: pageHeight } = page.getSize();
-  console.log(`Page size: ${pageWidth} x ${pageHeight}`);
-
-  // Card geometry matching original design
+  // Card geometry
   const cardRight = 552.76;
   const cardWidth = 76;
   const cardLeft = cardRight - cardWidth; // 476.76
@@ -77,7 +101,7 @@ async function main() {
   const subtextColor = rgb(80 / 255, 80 / 255, 80 / 255);
   const white = rgb(1, 1, 1);
 
-  // Draw Card Background (white) with site red border
+  // Draw Card Background
   page.drawRectangle({
     x: cardLeft,
     y: cardBottom,
@@ -139,7 +163,7 @@ async function main() {
     color: subtextColor,
   });
 
-  // Add Clickable Link Annotation on the QR Code card
+  // Clickable Link Annotations
   const linkAnnotation = pdfDoc.context.obj({
     Type: 'Annot',
     Subtype: 'Link',
@@ -154,7 +178,6 @@ async function main() {
   });
   const linkRef = pdfDoc.context.register(linkAnnotation);
 
-  // Also add mailto link on email antony.raimbault@outlook.com
   const emailAnnotation = pdfDoc.context.obj({
     Type: 'Annot',
     Subtype: 'Link',
@@ -169,7 +192,6 @@ async function main() {
   });
   const emailRef = pdfDoc.context.register(emailAnnotation);
 
-  // Attach annotations
   const existingAnnots = page.node.Annots();
   const annotsArray = existingAnnots ? existingAnnots.asArray() : [];
   annotsArray.push(linkRef, emailRef);
@@ -201,12 +223,12 @@ async function main() {
     try {
       fs.writeFileSync(oldPortfolioPublicPath, modifiedPdfBytes);
       console.log('Successfully saved copy to:', oldPortfolioPublicPath);
-    } catch (err) {
+    } catch {
       // ignore
     }
   }
 
-  console.log('All CV copies updated with site colors (#E03A3A) and QR code pointing to:', portfolioUrl);
+  console.log('All CV copies updated with Paris\'Com Sup and site red #E03A3A!');
 }
 
 main().catch(err => {

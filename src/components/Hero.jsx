@@ -105,7 +105,7 @@ const Hero = () => {
           </div>
 
           <span className="font-light tracking-wide text-white/90">
-            BTS Audiovisuel Montage & Post-production • Rythme 2j école / 3j entreprise
+            BTS Audiovisuel Montage & Post-production • Paris'Com Sup • Rythme 2j école / 3j entreprise
           </span>
         </div>
 
@@ -124,11 +124,14 @@ const Hero = () => {
 
         {/* Subtitle / Pitch */}
         <p className="max-w-2xl mx-auto text-sm sm:text-base text-white/80 font-light leading-relaxed tracking-wide mb-8">
-          Étudiant de 18 ans en BTS Audiovisuel (option Montage et Post-production). Alliant sens narratif, maîtrise technique d'<strong>Adobe Premiere Pro</strong> et d'<strong>After Effects</strong> et rigueur de production, je recherche une alternance en Île-de-France pour contribuer activement à vos projets vidéo.
+          Étudiant de 18 ans à l'école Paris'Com Sup en BTS Audiovisuel (option Montage et Post-production). Alliant sens narratif, maîtrise technique d'<strong>Adobe Premiere Pro</strong> et d'<strong>After Effects</strong> et rigueur de production, je recherche une alternance en Île-de-France pour contribuer activement à vos projets vidéo.
         </p>
 
         {/* Quick parameters badges */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 text-[11px] font-mono text-white/60">
+          <span className="px-3 py-1.5 rounded-lg bg-white/5 border border-[#E03A3A]/40 text-white font-medium shadow-[0_0_10px_rgba(224,58,58,0.15)]">
+            🏫 École : Paris'Com Sup
+          </span>
           <span className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white/85">
             📅 Rythme : 2j École / 3j Entreprise
           </span>
