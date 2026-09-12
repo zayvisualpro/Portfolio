@@ -9,6 +9,7 @@ const projectsData = [
     category: "Vidéo Portrait / Présentation",
     description: "Vidéo personnelle de présentation percutante mettant en valeur mon style de montage, mon univers créatif et ma signature visuelle.",
     role: "Direction créative, Montage, Étalonnage",
+    competencies: ["Storytelling", "Découpage cut", "Sound design", "Colorimétrie"],
     youtubeId: "a_G3Hx99Kwk",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/video1.jpg`,
     isShort: false,
@@ -20,8 +21,9 @@ const projectsData = [
     fps: "60 FPS",
     title: "Pourquoi nous ne vivrons jamais sur Mars ?",
     category: "Full Motion Design / Vulgarisation",
-    description: "Short immersif et éducatif conçu entièrement en motion design, rythmé avec des animations vectorielles précises et du sound design spatial.",
+    description: "Format immersif et éducatif conçu entièrement en motion design, rythmé avec des animations vectorielles précises et du sound design spatial.",
     role: "After Effects, Motion 2D/3D, Sound FX",
+    competencies: ["After Effects", "Animation vectorielle", "Typographie", "Design sonore"],
     youtubeId: "8hfBgBFFDIg",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/video2.jpg`,
     isShort: true,
@@ -35,6 +37,7 @@ const projectsData = [
     category: "Format Vertical Business",
     description: "Montage publicitaire ultra-rythmé axé sur la rétention d'audience, intégrant titrages dynamiques, zooms et structure de conversion.",
     role: "Montage rétention, Sous-titrage, Rythme",
+    competencies: ["Format 9:16", "Hook visuel", "Sous-titres dynamiques", "Cadence"],
     youtubeId: "a5WcmkAlVe0",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/video3.jpg`,
     isShort: true,
@@ -47,7 +50,8 @@ const projectsData = [
     title: "L'ÉVOLUTION de mon JEU INDÉ ! (Best-Of)",
     category: "Gaming & Divertissement",
     description: "Best-of de stream dynamique avec montage humoristique, découpage rapide, animations et sound design pour une immersion totale.",
-    role: "Dérushage, Montage Best-Of, Sound Design",
+    role: "Dérushage intensif, Montage Best-Of, Sound Design",
+    competencies: ["Dérushage volumineux", "Synchronisation son/image", "Timing comique"],
     youtubeId: "s2YAkoRdJjY",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/video4.jpg`,
     isShort: false,
@@ -66,25 +70,25 @@ const Projects = () => {
     : projectsData.filter(p => p.tag === filter);
 
   return (
-    <section id="projects" className="py-28 bg-[#0D0F13] relative border-t border-white/5">
+    <section id="projects" className="py-24 sm:py-32 bg-[#0D0F13] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
-        {/* Section Header with Serif Style */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-init">
           <div>
             <span className="text-[11px] uppercase tracking-[0.3em] text-[#E03A3A] font-bold inline-block mb-1">
-              PORTFOLIO SÉLECTIONNÉ
+              RÉALISATIONS & PROJETS VIDÉO
             </span>
             <h2 className="font-serif italic text-4xl sm:text-6xl text-white mt-1 font-normal">
-              Histoires & Réalisations
+              Démonstrations de Montage
             </h2>
           </div>
           <p className="max-w-md text-xs sm:text-sm text-white/50 leading-relaxed font-light">
-            Une sélection de projets reflétant la maîtrise du rythme, de l'animation graphique et de la colorimétrie cinématographique.
+            Une sélection de réalisations illustrant la maîtrise du rythme, de l'animation graphique sous After Effects et de la post-production sonore.
           </p>
         </div>
 
-        {/* Categories Bar with smooth transitions */}
+        {/* Categories Bar */}
         <div className="flex flex-wrap gap-2.5 mb-14 border-b border-white/10 pb-6 reveal-init">
           {categories.map((cat) => (
             <button
@@ -93,7 +97,7 @@ const Projects = () => {
                 setFilter(cat);
                 setActiveVideo(null);
               }}
-              className={`px-5 py-2 rounded-full text-xs uppercase tracking-wider transition-all duration-300 transform active:scale-95 ${
+              className={`px-5 py-2 rounded-full text-xs uppercase tracking-wider transition-all duration-300 transform active:scale-95 cursor-pointer ${
                 filter === cat 
                   ? 'bg-white text-black font-semibold shadow-lg shadow-white/10 scale-105' 
                   : 'text-white/50 hover:text-white hover:bg-white/5 border border-transparent hover:border-white/10'
@@ -136,7 +140,7 @@ const Projects = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent group-hover/thumb:opacity-60 transition-opacity duration-300"></div>
                       
-                      {/* Camera Viewfinder Corner Brackets & Center Focus Mark */}
+                      {/* Camera Viewfinder Corner Brackets */}
                       <div className="absolute inset-4 pointer-events-none opacity-30 group-hover/thumb:opacity-85 transition-opacity duration-300">
                         <div className="absolute top-0 left-0 w-3.5 h-3.5 border-t-1.5 border-l-1.5 border-white/80"></div>
                         <div className="absolute top-0 right-0 w-3.5 h-3.5 border-t-1.5 border-r-1.5 border-white/80"></div>
@@ -184,15 +188,24 @@ const Projects = () => {
                   <h3 className="font-serif italic text-2xl text-white mb-3 group-hover:text-white/90 group-hover:translate-x-1 transition-all duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-white/60 text-xs leading-relaxed font-light mb-5">
+                  <p className="text-white/60 text-xs leading-relaxed font-light mb-4">
                     {project.description}
                   </p>
+
+                  {/* Competencies Badges */}
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    {project.competencies.map((comp, i) => (
+                      <span key={i} className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/70">
+                        {comp}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Footer info */}
               <div className="px-7 py-4 border-t border-white/5 flex items-center justify-between text-xs text-white/40 bg-black/20 group-hover:bg-black/30 transition-colors">
-                <span className="font-light tracking-wide">{project.role}</span>
+                <span className="font-light tracking-wide text-[11px]">{project.role}</span>
                 <a 
                   href={project.isShort ? `https://www.youtube.com/shorts/${project.youtubeId}` : `https://www.youtube.com/watch?v=${project.youtubeId}`}
                   target="_blank"
@@ -211,16 +224,16 @@ const Projects = () => {
         </div>
 
         {/* YouTube Channel Banner link */}
-        <div className="mt-20 p-8 rounded-2xl bg-gradient-to-r from-white/[0.04] to-white/[0.01] border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left reveal-init">
+        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-r from-white/[0.04] to-white/[0.01] border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left reveal-init">
           <div>
             <h4 className="font-serif italic text-2xl text-white mb-1">Explorer Davantage de Créations</h4>
-            <p className="text-xs text-white/50">Retrouvez la playlist complète et mes autres réalisations sur YouTube.</p>
+            <p className="text-xs text-white/50">Retrouvez la playlist complète et mes autres montages vidéo sur YouTube.</p>
           </div>
           <a
             href="https://www.youtube.com/playlist?list=PL6zcl_V6SX6pAC6WW5jwMEbRu0CLiV6nD"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-white text-black hover:bg-[#E03A3A] hover:text-white px-7 py-3 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover:scale-105 shadow-md group"
+            className="inline-flex items-center gap-2 bg-white text-black hover:bg-[#E03A3A] hover:text-white px-7 py-3 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 hover:scale-105 shadow-md group shrink-0"
           >
             <span>Ouvrir la Playlist</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover:translate-x-1 transition-transform">

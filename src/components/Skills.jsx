@@ -18,15 +18,15 @@ const Skills = () => {
       name: "Adobe Premiere Pro", 
       icon: <PremiereIcon />,
       tag: "Édition Maîtresse", 
-      desc: "Dérushage intensif, montages narratifs & multicam, synchronisation sonore, transitions fluides et exports multi-formats optimisés.",
+      desc: "Dérushage intensif, montage narratif, multicam, synchronisation audio, transitions cut & rythmées, gestion de proxies et exports optimisés pour tous supports.",
       level: "95%",
       accentColor: "#9999FF"
     },
     { 
       name: "Adobe After Effects", 
       icon: <AfterEffectsIcon />,
-      tag: "Motion & FX", 
-      desc: "Animations vectorielles 2D/3D, titrage animé, compositing, incrustations, tracking de mouvement et vulgarisation graphique.",
+      tag: "Motion & Compositing", 
+      desc: "Animations vectorielles 2D/3D, titrage cinématique, incrustations sur fond vert, motion tracking, habillage graphique et vulgarisation visuelle.",
       level: "90%",
       accentColor: "#CF96FD"
     },
@@ -37,25 +37,53 @@ const Skills = () => {
     "Color Grading & Étalonnage Cinéma",
     "Sound Design & Mixage Audio",
     "Motion Design & Typographie Animée",
-    "Formats Verticaux (Reels, TikTok, Shorts)",
+    "Formats Courts (Reels, TikTok, Shorts)",
     "Rétention d'Attention & Hook Visuel",
     "Organisation des Chutes & Gestion des Rushs",
     "Workflow Proxy & Optimisation Rendu"
   ];
 
+  const itAndWorkflow = [
+    {
+      title: "Dépannage & Maintenance Informatique",
+      desc: "Diagnostique matériel et logiciel, optimisation des performances de stations de montage, gestion du stockage SSD/NVMe et des sauvegardes.",
+      icon: "💻"
+    },
+    {
+      title: "Suite Office & Bureautique",
+      desc: "Maîtrise des outils bureautiques (Word, Excel, PowerPoint) pour les feuilles de suivi de production, dépouillement et documentation.",
+      icon: "📊"
+    },
+    {
+      title: "Codecs & Export Numérique",
+      desc: "Maîtrise des normes d'encodage (ProRes, DNxHD, H.264, HEVC), débits de diffusion, résolutions et calibrage des métadonnées.",
+      icon: "⚙️"
+    }
+  ];
+
+  const softSkills = [
+    "Organisé & Minutieux",
+    "Sens des responsabilités",
+    "Esprit d'équipe & Courtoisie",
+    "Bienveillant & À l'écoute",
+    "Grande adaptabilité",
+    "Curieux & Force de proposition"
+  ];
+
   return (
-    <section id="skills" className="py-28 bg-[#0D0F13] relative border-t border-white/5">
+    <section id="skills" className="py-24 sm:py-32 bg-[#0D0F13] relative border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         
-        <div className="text-center max-w-2xl mx-auto mb-20 reveal-init">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20 reveal-init">
           <span className="text-[11px] uppercase tracking-[0.3em] text-[#E03A3A] font-bold inline-block mb-1">
-            STACK TECHNIQUE
+            STACK TECHNIQUE & QUALITÉS
           </span>
           <h2 className="font-serif italic text-4xl sm:text-5xl text-white mt-1 font-normal">
-            Outils & Maîtrise Technique
+            Compétences & Outils de Production
           </h2>
           <p className="mt-4 text-xs sm:text-sm text-white/50 leading-relaxed font-light">
-            Une expertise logicielle poussée pour délivrer des rendus professionnels répondant aux standards actuels de l'industrie.
+            Une solide maîtrise logicielle enrichie d'une rigueur informatique et d'un savoir-être adapté aux exigences d'une équipe de production.
           </p>
         </div>
 
@@ -77,7 +105,7 @@ const Skills = () => {
               {/* Logo + Software Title */}
               <div className="flex items-center gap-4 mb-4">
                 {sw.icon}
-                <h3 className="font-serif italic text-3xl text-white group-hover:text-white/90 transition-colors">
+                <h3 className="font-serif italic text-2xl sm:text-3xl text-white group-hover:text-white/90 transition-colors">
                   {sw.name}
                 </h3>
               </div>
@@ -95,11 +123,10 @@ const Skills = () => {
                     backgroundColor: sw.accentColor 
                   }}
                 >
-                  {/* After Effects Keyframe Diamond Marker */}
                   <span 
                     className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2.5 h-2.5 rotate-45 border border-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                     style={{ backgroundColor: sw.accentColor }}
-                    title="Keyframe Marker"
+                    title="Point clé d'animation"
                   ></span>
                 </div>
               </div>
@@ -107,10 +134,10 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Domaines d'expertise pills with hover interaction */}
-        <div className="p-8 sm:p-10 rounded-2xl bg-[#121419]/50 border border-white/5 reveal-init">
+        {/* Domaines d'expertise pills */}
+        <div className="p-8 sm:p-10 rounded-2xl bg-[#121419]/50 border border-white/5 reveal-init mb-12">
           <h4 className="text-xs uppercase tracking-[0.2em] text-white/60 font-semibold mb-6 text-center">
-            COMPÉTENCES CLÉS EN PRODUCTION
+            SAVOIR-FAIRE EN POST-PRODUCTION
           </h4>
           <div className="flex flex-wrap justify-center gap-3">
             {expertises.map((item, idx) => (
@@ -122,6 +149,71 @@ const Skills = () => {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* IT & Workflow + Soft Skills & Languages Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 reveal-init">
+          
+          {/* IT & Technical Support */}
+          <div className="lg:col-span-7 p-7 rounded-2xl bg-[#121419] border border-white/10 shadow-xl">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-white/60 font-semibold mb-5 flex items-center gap-2">
+              <span>WORKFLOW & ENVIRONNEMENT TECHNIQUE</span>
+            </h4>
+            
+            <div className="space-y-4">
+              {itAndWorkflow.map((item, idx) => (
+                <div key={idx} className="p-4 rounded-xl bg-black/30 border border-white/5 flex items-start gap-4">
+                  <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
+                  <div>
+                    <h5 className="text-sm font-semibold text-white mb-1">{item.title}</h5>
+                    <p className="text-xs text-white/60 leading-relaxed font-light">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Soft Skills & Languages */}
+          <div className="lg:col-span-5 p-7 rounded-2xl bg-[#121419] border border-white/10 shadow-xl flex flex-col justify-between">
+            <div>
+              <h4 className="text-xs uppercase tracking-[0.2em] text-white/60 font-semibold mb-5">
+                QUALITÉS & SAVOIR-ÊTRE
+              </h4>
+              
+              <div className="flex flex-wrap gap-2 mb-8">
+                {softSkills.map((skill, idx) => (
+                  <span 
+                    key={idx}
+                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-white/80 font-light"
+                  >
+                    ✓ {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Languages & Interests */}
+            <div className="pt-6 border-t border-white/10">
+              <div className="grid grid-cols-2 gap-4 text-xs">
+                <div>
+                  <span className="text-white/40 block text-[10px] uppercase font-mono tracking-wider mb-1">
+                    Langues
+                  </span>
+                  <p className="text-white font-medium">Français : Natif</p>
+                  <p className="text-white/70 font-light">Anglais : Niveau B2</p>
+                </div>
+                <div>
+                  <span className="text-white/40 block text-[10px] uppercase font-mono tracking-wider mb-1">
+                    Centres d'intérêt
+                  </span>
+                  <p className="text-white font-medium">Cinéma & Réalisation</p>
+                  <p className="text-white/70 font-light">Pratique Sportive</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
       </div>

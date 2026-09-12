@@ -57,19 +57,23 @@ const Preloader = ({ onFinish }) => {
           <span className="text-white/70">REC // 24 FPS</span>
         </div>
         <div>
-          <span>PROD: 2026</span>
+          <span>ALTERNANCE 2026</span>
         </div>
       </div>
 
       {/* Center: Brand Typography Reveal */}
       <div className="text-center relative my-auto">
         <span className="text-[10px] uppercase font-mono tracking-[0.4em] text-[#E03A3A] font-semibold block mb-3 animate-pulse">
-          PORTFOLIO MONTAGE & MOTION
+          BTS AUDIOVISUEL • RECHERCHE D'ALTERNANCE
         </span>
 
-        <h1 className="font-serif italic text-6xl sm:text-8xl md:text-9xl text-white tracking-tight leading-none mb-4">
-          ZAY
+        <h1 className="font-serif italic text-4xl sm:text-7xl md:text-8xl text-white tracking-tight leading-none mb-4">
+          ANTONY RAIMBAULT
         </h1>
+
+        <p className="text-xs uppercase font-mono tracking-[0.25em] text-white/60 mb-5">
+          MONTAGE & POST-PRODUCTION
+        </p>
 
         {/* Expanding Red Accent Line */}
         <div className="w-32 sm:w-48 h-[2px] bg-gradient-to-r from-transparent via-[#E03A3A] to-transparent mx-auto relative overflow-hidden">
