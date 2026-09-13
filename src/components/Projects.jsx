@@ -5,15 +5,15 @@ const projectsData = [
     id: 1,
     code: "REEL_01",
     fps: "24 FPS",
-    title: "JE SUIS MONTEUR ! 📷",
-    category: "Vidéo Portrait / Présentation",
-    description: "Vidéo personnelle de présentation percutante mettant en valeur mon style de montage, mon univers créatif et ma signature visuelle.",
-    role: "Direction créative, Montage, Étalonnage",
+    title: "SHOWREEL 2026 - Antony Raimbault",
+    category: "Showreel / Bande Démo",
+    description: "Bande démo officielle mettant en valeur mon savoir-faire en montage dynamique, sens du rythme, habillage graphique et sound design immersif.",
+    role: "Direction créative, Montage, Motion Design, Sound Design",
     competencies: ["Storytelling", "Découpage cut", "Sound design", "Colorimétrie"],
-    youtubeId: "a_G3Hx99Kwk",
+    youtubeId: "tRWgQEUkUFQ",
     thumbnail: `${import.meta.env.BASE_URL}thumbnails/video1.jpg`,
     isShort: false,
-    tag: "Présentation"
+    tag: "Showreel"
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ const Projects = () => {
   const [filter, setFilter] = useState('Tous');
   const [activeVideo, setActiveVideo] = useState(null);
 
-  const categories = ['Tous', 'Présentation', 'Motion Design', 'Shorts', 'Gaming'];
+  const categories = ['Tous', 'Showreel', 'Motion Design', 'Shorts', 'Gaming'];
 
   const filteredProjects = filter === 'Tous' 
     ? projectsData 
