@@ -17,7 +17,35 @@ const projectsData = [
   },
   {
     id: 2,
-    code: "MOTION_02",
+    code: "MEDIA_02",
+    fps: "24 FPS",
+    title: "Les Extraterriens - Ce qu'il a Découvert sur le Sommeil",
+    category: "Format Média / Interview & Podcast",
+    description: "Montage au format média pour le podcast Les Extraterriens. Étalonnage, découpage de l'interview, rythme d'écoute et sound design soigné.",
+    role: "Montage Interview, Étalonnage, Sound Design",
+    competencies: ["Interview / Podcast", "Découpage multicam", "Étalonnage", "Sound design"],
+    youtubeId: "kfTu-HMpctM",
+    thumbnail: `${import.meta.env.BASE_URL}thumbnails/video6.jpg`,
+    isShort: false,
+    tag: "Interview"
+  },
+  {
+    id: 3,
+    code: "YT_03",
+    fps: "24 FPS",
+    title: "Composer sa Musique - Piano Man",
+    category: "Vidéo YouTube / Face Caméra",
+    description: "Montage vidéo dynamique pour la chaîne YouTube « Composer sa musique ». Gestion du rythme, découpage cut, sound design et habillage visuel.",
+    role: "Montage, Dérushage, Sound Design",
+    competencies: ["Face Caméra", "Rythme de montage", "Illustration sonore", "Dynamisme"],
+    youtubeId: "vHmqPZg0ZCA",
+    thumbnail: `${import.meta.env.BASE_URL}thumbnails/video5.jpg`,
+    isShort: false,
+    tag: "YouTube"
+  },
+  {
+    id: 4,
+    code: "MOTION_04",
     fps: "60 FPS",
     title: "Pourquoi nous ne vivrons jamais sur Mars ?",
     category: "Full Motion Design / Vulgarisation",
@@ -30,8 +58,8 @@ const projectsData = [
     tag: "Motion Design"
   },
   {
-    id: 3,
-    code: "SHORT_03",
+    id: 5,
+    code: "SHORT_05",
     fps: "30 FPS",
     title: "E-Commerce & Stratégie d'Acquisition",
     category: "Format Vertical Business",
@@ -44,8 +72,8 @@ const projectsData = [
     tag: "Shorts"
   },
   {
-    id: 4,
-    code: "STREAM_04",
+    id: 6,
+    code: "STREAM_06",
     fps: "60 FPS",
     title: "L'ÉVOLUTION de mon JEU INDÉ ! (Best-Of)",
     category: "Gaming & Divertissement",
@@ -63,7 +91,7 @@ const Projects = () => {
   const [filter, setFilter] = useState('Tous');
   const [activeVideo, setActiveVideo] = useState(null);
 
-  const categories = ['Tous', 'Showreel', 'Motion Design', 'Shorts', 'Gaming'];
+  const categories = ['Tous', 'Showreel', 'Interview', 'YouTube', 'Motion Design', 'Shorts', 'Gaming'];
 
   const filteredProjects = filter === 'Tous' 
     ? projectsData 
