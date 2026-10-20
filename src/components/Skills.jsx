@@ -17,18 +17,41 @@ const Skills = () => {
     { 
       name: "Adobe Premiere Pro", 
       icon: <PremiereIcon />,
-      tag: "Édition Maîtresse", 
-      desc: "Dérushage intensif, montage narratif, multicam, synchronisation audio, transitions cut & rythmées, gestion de proxies et exports optimisés pour tous supports.",
-      level: "95%",
-      accentColor: "#9999FF"
+      tag: "Montage & Post-Production",
+      badge: "Très Bonne Maîtrise",
+      badgeIcon: "●",
+      statusNote: "Workflow fluide en production",
+      masteryTitle: "Très Bonne Maîtrise",
+      desc: "Dérushage intensif, montage narratif cut & rythmé, gestion multicam, synchronisation audio, transitions soignées, gestion de proxies et exports optimisés pour tous supports.",
+      capabilities: [
+        "Montage cut & narratif",
+        "Multicam & Mixage audio",
+        "Workflow Proxies légers",
+        "Exports tous formats"
+      ],
+      barFill: "85%",
+      accentColor: "#9999FF",
+      borderHover: "hover:border-[#9999FF]/50 hover:shadow-[0_10px_35px_-10px_rgba(153,153,255,0.25)]"
     },
     { 
       name: "Adobe After Effects", 
       icon: <AfterEffectsIcon />,
-      tag: "Motion & Compositing", 
-      desc: "Animations vectorielles 2D/3D, titrage cinématique, incrustations sur fond vert, motion tracking, habillage graphique et vulgarisation visuelle.",
-      level: "90%",
-      accentColor: "#CF96FD"
+      tag: "Motion & Compositing",
+      badge: "Très Haute Maîtrise",
+      badgeIcon: "★",
+      badgeHighlight: "Outil de prédilection",
+      statusNote: "Outil N°1 • Cœur d'expertise",
+      masteryTitle: "Très Haute Maîtrise (Prédilection)",
+      desc: "Animations vectorielles 2D/3D, titrage cinématique, incrustations sur fond vert, motion tracking, habillage graphique et vulgarisation visuelle percutante.",
+      capabilities: [
+        "Motion Design 2D / 3D",
+        "Tracking & Incrustation",
+        "Typographie & Habillage",
+        "Compositing avancé"
+      ],
+      barFill: "100%",
+      accentColor: "#CF96FD",
+      borderHover: "hover:border-[#CF96FD]/50 hover:shadow-[0_10px_35px_-10px_rgba(207,150,253,0.25)]"
     },
   ];
 
@@ -93,41 +116,79 @@ const Skills = () => {
             <div 
               key={sw.name}
               style={{ transitionDelay: `${index * 150}ms` }}
-              className="p-8 rounded-2xl bg-[#121419] border border-white/10 hover:border-white/30 transition-all duration-500 shadow-xl hover:-translate-y-2 hover:shadow-[0_10px_35px_-10px_rgba(0,0,0,0.5)] relative overflow-hidden group reveal-init"
+              className={`p-8 rounded-2xl bg-[#121419] border border-white/10 ${sw.borderHover} transition-all duration-500 shadow-xl hover:-translate-y-2 relative overflow-hidden group reveal-init flex flex-col justify-between`}
             >
-              <div className="flex items-center justify-between mb-6">
-                <span className="text-[10px] uppercase font-mono tracking-widest text-[#E03A3A] px-2.5 py-1 rounded bg-[#E03A3A]/10 border border-[#E03A3A]/20">
-                  {sw.tag}
-                </span>
-                <span className="text-xs font-mono text-white/40 group-hover:text-white transition-colors">{sw.level}</span>
-              </div>
-              
-              {/* Logo + Software Title */}
-              <div className="flex items-center gap-4 mb-4">
-                {sw.icon}
-                <h3 className="font-serif italic text-2xl sm:text-3xl text-white group-hover:text-white/90 transition-colors">
-                  {sw.name}
-                </h3>
-              </div>
-
-              <p className="text-xs text-white/60 leading-relaxed font-light mb-6">
-                {sw.desc}
-              </p>
-              
-              {/* Animated Progress Line with Keyframe Diamond Marker */}
-              <div className="relative w-full bg-white/5 h-1.5 rounded-full">
-                <div 
-                  className="h-full rounded-full transition-all duration-1000 group-hover:brightness-125 relative"
-                  style={{ 
-                    width: sw.level,
-                    backgroundColor: sw.accentColor 
-                  }}
-                >
+              <div>
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] uppercase font-mono tracking-widest text-[#E03A3A] px-2.5 py-1 rounded bg-[#E03A3A]/10 border border-[#E03A3A]/20">
+                      {sw.tag}
+                    </span>
+                    {sw.badgeHighlight && (
+                      <span className="text-[10px] font-mono tracking-wider text-[#CF96FD] px-2 py-0.5 rounded-full bg-[#CF96FD]/15 border border-[#CF96FD]/30">
+                        ★ {sw.badgeHighlight}
+                      </span>
+                    )}
+                  </div>
                   <span 
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2.5 h-2.5 rotate-45 border border-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"
-                    style={{ backgroundColor: sw.accentColor }}
-                    title="Point clé d'animation"
-                  ></span>
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold"
+                    style={{
+                      backgroundColor: `${sw.accentColor}18`,
+                      color: sw.accentColor,
+                      border: `1px solid ${sw.accentColor}40`
+                    }}
+                  >
+                    <span>{sw.badgeIcon}</span>
+                    <span>{sw.badge}</span>
+                  </span>
+                </div>
+                
+                {/* Logo + Software Title */}
+                <div className="flex items-center gap-4 mb-4">
+                  {sw.icon}
+                  <h3 className="font-serif italic text-2xl sm:text-3xl text-white group-hover:text-white/90 transition-colors">
+                    {sw.name}
+                  </h3>
+                </div>
+
+                <p className="text-xs text-white/60 leading-relaxed font-light mb-5">
+                  {sw.desc}
+                </p>
+
+                {/* Concrete Capabilities */}
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  {sw.capabilities.map((cap, i) => (
+                    <span 
+                      key={i} 
+                      className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/75"
+                    >
+                      {cap}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Tangible Mastery Indicator */}
+              <div className="pt-5 border-t border-white/5 space-y-2">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-white/50 text-[11px] font-mono">{sw.statusNote}</span>
+                  <span 
+                    className="font-mono text-xs font-semibold"
+                    style={{ color: sw.accentColor }}
+                  >
+                    {sw.masteryTitle}
+                  </span>
+                </div>
+
+                {/* Timeline Track with Keyframe Diamond Marker */}
+                <div className="relative w-full bg-white/5 h-2 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full rounded-full transition-all duration-1000 group-hover:brightness-125 relative"
+                    style={{ 
+                      width: sw.barFill,
+                      backgroundColor: sw.accentColor 
+                    }}
+                  ></div>
                 </div>
               </div>
             </div>
