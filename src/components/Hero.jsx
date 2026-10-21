@@ -134,36 +134,36 @@ const Hero = () => {
     >
       {/* Dynamic Projects Marquee Background with Cursor-driven Parallax */}
       <div 
-        className="absolute inset-[-80px] pointer-events-none overflow-hidden transition-transform duration-300 ease-out will-change-transform z-0 flex flex-col justify-center gap-6 sm:gap-8 opacity-45"
+        className="absolute inset-[-60px] sm:inset-[-100px] pointer-events-none overflow-hidden transition-transform duration-300 ease-out will-change-transform z-0 flex flex-col justify-center gap-6 sm:gap-8 opacity-80"
         style={{ 
-          transform: `translate3d(${parallaxX}px, ${parallaxY}px, 0) scale(1.04) rotate(-2deg)`
+          transform: `translate3d(${parallaxX}px, ${parallaxY}px, 0) scale(1.04) rotate(-1.5deg)`
         }}
       >
         {/* Track 1: Scrolling Left */}
         <div className="relative flex overflow-hidden">
-          <div className="animate-marquee-left flex gap-5 shrink-0 items-center">
-            {[...heroProjectsRow1, ...heroProjectsRow1].map((p, idx) => (
+          <div className="animate-marquee-left flex gap-5 sm:gap-6 shrink-0 items-center">
+            {[...heroProjectsRow1, ...heroProjectsRow1, ...heroProjectsRow1].map((p, idx) => (
               <div 
                 key={`row1-${idx}`}
-                className="w-72 sm:w-88 aspect-video rounded-xl overflow-hidden border border-white/10 bg-[#121419] shadow-2xl relative shrink-0"
+                className="w-72 sm:w-84 md:w-96 aspect-video rounded-2xl overflow-hidden border border-white/20 bg-[#121419] shadow-2xl relative shrink-0"
               >
                 <img 
                   src={p.img} 
                   alt={p.title} 
-                  className="w-full h-full object-cover filter brightness-90 contrast-105"
+                  className="w-full h-full object-cover filter brightness-100 contrast-105"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 {/* Meta overlays */}
-                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[9px] font-mono text-white/80">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E03A3A]"></span>
-                  <span>{p.code}</span>
+                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-mono text-white/90">
+                  <span className="w-2 h-2 rounded-full bg-[#E03A3A] animate-pulse"></span>
+                  <span className="font-semibold">{p.code}</span>
                   <span className="text-white/40">•</span>
                   <span>{p.timecode}</span>
                 </div>
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-white/90">
-                  <span className="font-serif italic text-sm text-white truncate max-w-[70%]">{p.title}</span>
-                  <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/70 font-mono">{p.tag}</span>
+                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90">
+                  <span className="font-serif italic text-sm sm:text-base text-white truncate max-w-[70%] drop-shadow-md">{p.title}</span>
+                  <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#E03A3A]/30 border border-[#E03A3A]/40 text-white font-mono">{p.tag}</span>
                 </div>
               </div>
             ))}
@@ -172,48 +172,43 @@ const Hero = () => {
 
         {/* Track 2: Scrolling Right */}
         <div className="relative flex overflow-hidden">
-          <div className="animate-marquee-right flex gap-5 shrink-0 items-center">
-            {[...heroProjectsRow2, ...heroProjectsRow2].map((p, idx) => (
+          <div className="animate-marquee-right flex gap-5 sm:gap-6 shrink-0 items-center">
+            {[...heroProjectsRow2, ...heroProjectsRow2, ...heroProjectsRow2].map((p, idx) => (
               <div 
                 key={`row2-${idx}`}
-                className="w-72 sm:w-88 aspect-video rounded-xl overflow-hidden border border-white/10 bg-[#121419] shadow-2xl relative shrink-0"
+                className="w-72 sm:w-84 md:w-96 aspect-video rounded-2xl overflow-hidden border border-white/20 bg-[#121419] shadow-2xl relative shrink-0"
               >
                 <img 
                   src={p.img} 
                   alt={p.title} 
-                  className="w-full h-full object-cover filter brightness-90 contrast-105"
+                  className="w-full h-full object-cover filter brightness-100 contrast-105"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
                 {/* Meta overlays */}
-                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[9px] font-mono text-white/80">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E03A3A]"></span>
-                  <span>{p.code}</span>
+                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-mono text-white/90">
+                  <span className="w-2 h-2 rounded-full bg-[#E03A3A] animate-pulse"></span>
+                  <span className="font-semibold">{p.code}</span>
                   <span className="text-white/40">•</span>
                   <span>{p.timecode}</span>
                 </div>
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-white/90">
-                  <span className="font-serif italic text-sm text-white truncate max-w-[70%]">{p.title}</span>
-                  <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/70 font-mono">{p.tag}</span>
+                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white/90">
+                  <span className="font-serif italic text-sm sm:text-base text-white truncate max-w-[70%] drop-shadow-md">{p.title}</span>
+                  <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/15 border border-white/15 text-white/90 font-mono">{p.tag}</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Gradients to guarantee text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-[#0B0C0E]/70 to-[#0B0C0E]/85"></div>
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(ellipse 950px 650px at center, rgba(11, 12, 14, 0.4) 0%, rgba(11, 12, 14, 0.88) 65%, #0B0C0E 100%)'
-          }}
-        ></div>
       </div>
+
+      {/* Smooth top and bottom edge blend into background */}
+      <div className="absolute top-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-b from-[#0B0C0E] to-transparent pointer-events-none z-1"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-28 sm:h-36 bg-gradient-to-t from-[#0B0C0E] to-transparent pointer-events-none z-1"></div>
 
       {/* Interactive Cursor Spotlight / Projector Beam */}
       <div 
-        className="absolute inset-0 pointer-events-none z-0 transition-opacity duration-300"
+        className="absolute inset-0 pointer-events-none z-1 transition-opacity duration-300"
         style={{
           background: `radial-gradient(750px circle at ${mousePos.x * 100}% ${mousePos.y * 100}%, rgba(224, 58, 58, 0.16), rgba(255, 255, 255, 0.03) 30%, transparent 65%)`
         }}
@@ -221,7 +216,7 @@ const Hero = () => {
 
       {/* Ambient Moving Glow Light following cursor */}
       <div 
-        className="absolute pointer-events-none z-0 rounded-full blur-[110px] bg-[#E03A3A]/15 w-[420px] h-[420px] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"
+        className="absolute pointer-events-none z-1 rounded-full blur-[120px] bg-[#E03A3A]/20 w-[440px] h-[440px] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"
         style={{
           left: `${mousePos.x * 100}%`,
           top: `${mousePos.y * 100}%`
@@ -229,10 +224,10 @@ const Hero = () => {
       ></div>
 
       {/* Spacer for navbar */}
-      <div className="h-14 sm:h-20"></div>
+      <div className="h-10 sm:h-14"></div>
 
-      {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-6 text-center my-auto py-8 relative z-10">
+      {/* Main Content inside frosted glass card */}
+      <div className="max-w-4xl mx-auto px-6 sm:px-10 py-10 sm:py-12 text-center my-auto relative z-10 rounded-3xl bg-[#0B0C0E]/82 backdrop-blur-xl border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.85)]">
         
         {/* Top Alternance Badge */}
         <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[11px] sm:text-[12px] text-white/90 mb-8 shadow-2xl hover:border-[#E03A3A]/40 transition-all duration-300 select-none">

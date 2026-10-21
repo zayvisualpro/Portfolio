@@ -169,13 +169,13 @@ html {
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-33.333333%, 0, 0);
   }
 }
 
 @keyframes marqueeRight {
   0% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-33.333333%, 0, 0);
   }
   100% {
     transform: translate3d(0, 0, 0);
@@ -183,23 +183,17 @@ html {
 }
 
 .animate-marquee-left {
-  display: flex;
-  width: max-content;
-  animation: marqueeLeft 45s linear infinite;
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeLeft 26s linear infinite !important;
   will-change: transform;
 }
 
 .animate-marquee-right {
-  display: flex;
-  width: max-content;
-  animation: marqueeRight 50s linear infinite;
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeRight 30s linear infinite !important;
   will-change: transform;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee-left,
-  .animate-marquee-right {
-    animation-play-state: paused;
-  }
-}
 
