@@ -66,23 +66,6 @@ const Skills = () => {
     "Workflow Proxy & Optimisation Rendu"
   ];
 
-  const itAndWorkflow = [
-    {
-      title: "Dépannage & Maintenance Informatique",
-      desc: "Diagnostique matériel et logiciel, optimisation des performances de stations de montage, gestion du stockage SSD/NVMe et des sauvegardes.",
-      icon: "💻"
-    },
-    {
-      title: "Suite Office & Bureautique",
-      desc: "Maîtrise des outils bureautiques (Word, Excel, PowerPoint) pour les feuilles de suivi de production, dépouillement et documentation.",
-      icon: "📊"
-    },
-    {
-      title: "Codecs & Export Numérique",
-      desc: "Maîtrise des normes d'encodage (ProRes, DNxHD, H.264, HEVC), débits de diffusion, résolutions et calibrage des métadonnées.",
-      icon: "⚙️"
-    }
-  ];
 
   const softSkills = [
     "Organisé & Minutieux",
@@ -212,40 +195,20 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* IT & Workflow + Soft Skills & Languages Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 reveal-init">
-          
-          {/* IT & Technical Support */}
-          <div className="lg:col-span-7 p-7 rounded-2xl bg-[#121419] border border-white/10 shadow-xl">
-            <h4 className="text-xs uppercase tracking-[0.2em] text-white/60 font-semibold mb-5 flex items-center gap-2">
-              <span>WORKFLOW & ENVIRONNEMENT TECHNIQUE</span>
-            </h4>
+        {/* Soft Skills & Languages */}
+        <div className="p-7 sm:p-9 rounded-2xl bg-[#121419] border border-white/10 shadow-xl reveal-init">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
-            <div className="space-y-4">
-              {itAndWorkflow.map((item, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-black/30 border border-white/5 flex items-start gap-4">
-                  <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
-                  <div>
-                    <h5 className="text-sm font-semibold text-white mb-1">{item.title}</h5>
-                    <p className="text-xs text-white/60 leading-relaxed font-light">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Soft Skills & Languages */}
-          <div className="lg:col-span-5 p-7 rounded-2xl bg-[#121419] border border-white/10 shadow-xl flex flex-col justify-between">
-            <div>
-              <h4 className="text-xs uppercase tracking-[0.2em] text-white/60 font-semibold mb-5">
+            {/* Soft Skills */}
+            <div className="md:col-span-7">
+              <h4 className="text-xs uppercase tracking-[0.2em] text-white/60 font-semibold mb-4">
                 QUALITÉS & SAVOIR-ÊTRE
               </h4>
-              
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2.5">
                 {softSkills.map((skill, idx) => (
                   <span 
                     key={idx}
-                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-white/80 font-light"
+                    className="px-3.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-white/80 font-light hover:border-white/20 transition-colors"
                   >
                     ✓ {skill}
                   </span>
@@ -254,27 +217,26 @@ const Skills = () => {
             </div>
 
             {/* Languages & Interests */}
-            <div className="pt-6 border-t border-white/10">
-              <div className="grid grid-cols-2 gap-4 text-xs">
+            <div className="md:col-span-5 md:border-l md:border-white/10 md:pl-8">
+              <div className="grid grid-cols-2 gap-6 text-xs">
                 <div>
-                  <span className="text-white/40 block text-[10px] uppercase font-mono tracking-wider mb-1">
+                  <span className="text-white/40 block text-[10px] uppercase font-mono tracking-wider mb-1.5">
                     Langues
                   </span>
                   <p className="text-white font-medium">Français : Natif</p>
-                  <p className="text-white/70 font-light">Anglais : Niveau B2</p>
+                  <p className="text-white/70 font-light mt-0.5">Anglais : Niveau B2</p>
                 </div>
                 <div>
-                  <span className="text-white/40 block text-[10px] uppercase font-mono tracking-wider mb-1">
+                  <span className="text-white/40 block text-[10px] uppercase font-mono tracking-wider mb-1.5">
                     Centres d'intérêt
                   </span>
                   <p className="text-white font-medium">Cinéma & Réalisation</p>
-                  <p className="text-white/70 font-light">Pratique Sportive</p>
+                  <p className="text-white/70 font-light mt-0.5">Pratique Sportive</p>
                 </div>
               </div>
             </div>
 
           </div>
-
         </div>
 
       </div>
