@@ -23,30 +23,190 @@ const Hero = () => {
   const parallaxX = (mousePos.x - 0.5) * -35;
   const parallaxY = (mousePos.y - 0.5) * -35;
 
+  // Project items for the background filmstrip marquee
+  const heroProjectsRow1 = [
+    {
+      id: 1,
+      title: "SHOWREEL 2026",
+      code: "REEL_01",
+      tag: "Showreel",
+      img: `${import.meta.env.BASE_URL}thumbnails/video1.jpg`,
+      timecode: "00:00:24:12"
+    },
+    {
+      id: 2,
+      title: "Les Extraterriens",
+      code: "MEDIA_02",
+      tag: "Interview / Podcast",
+      img: `${import.meta.env.BASE_URL}thumbnails/video6.jpg`,
+      timecode: "00:14:08:00"
+    },
+    {
+      id: 3,
+      title: "Composer sa Musique",
+      code: "YT_03",
+      tag: "Vidéo YouTube",
+      img: `${import.meta.env.BASE_URL}thumbnails/video5.jpg`,
+      timecode: "00:08:32:15"
+    },
+    {
+      id: 4,
+      title: "Pourquoi pas sur Mars ?",
+      code: "MOTION_04",
+      tag: "Motion Design",
+      img: `${import.meta.env.BASE_URL}thumbnails/video2.jpg`,
+      timecode: "00:01:45:00"
+    },
+    {
+      id: 5,
+      title: "E-Commerce",
+      code: "SHORT_05",
+      tag: "Short 9:16",
+      img: `${import.meta.env.BASE_URL}thumbnails/video3.jpg`,
+      timecode: "00:00:58:20"
+    },
+    {
+      id: 6,
+      title: "Évolution Jeu Indé",
+      code: "STREAM_06",
+      tag: "Best-Of Gaming",
+      img: `${import.meta.env.BASE_URL}thumbnails/video4.jpg`,
+      timecode: "00:11:15:08"
+    }
+  ];
+
+  const heroProjectsRow2 = [
+    {
+      id: 4,
+      title: "Pourquoi pas sur Mars ?",
+      code: "MOTION_04",
+      tag: "Motion Design",
+      img: `${import.meta.env.BASE_URL}thumbnails/video2.jpg`,
+      timecode: "00:01:45:00"
+    },
+    {
+      id: 1,
+      title: "SHOWREEL 2026",
+      code: "REEL_01",
+      tag: "Showreel",
+      img: `${import.meta.env.BASE_URL}thumbnails/video1.jpg`,
+      timecode: "00:00:24:12"
+    },
+    {
+      id: 6,
+      title: "Évolution Jeu Indé",
+      code: "STREAM_06",
+      tag: "Best-Of Gaming",
+      img: `${import.meta.env.BASE_URL}thumbnails/video4.jpg`,
+      timecode: "00:11:15:08"
+    },
+    {
+      id: 2,
+      title: "Les Extraterriens",
+      code: "MEDIA_02",
+      tag: "Interview / Podcast",
+      img: `${import.meta.env.BASE_URL}thumbnails/video6.jpg`,
+      timecode: "00:14:08:00"
+    },
+    {
+      id: 5,
+      title: "E-Commerce",
+      code: "SHORT_05",
+      tag: "Short 9:16",
+      img: `${import.meta.env.BASE_URL}thumbnails/video3.jpg`,
+      timecode: "00:00:58:20"
+    },
+    {
+      id: 3,
+      title: "Composer sa Musique",
+      code: "YT_03",
+      tag: "Vidéo YouTube",
+      img: `${import.meta.env.BASE_URL}thumbnails/video5.jpg`,
+      timecode: "00:08:32:15"
+    }
+  ];
+
   return (
     <section 
       id="home" 
       onMouseMove={handleMouseMove}
       className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#0B0C0E] py-24 sm:py-32"
     >
-      {/* Background Image with Cursor-driven Parallax & Subtle Zoom */}
+      {/* Dynamic Projects Marquee Background with Cursor-driven Parallax */}
       <div 
-        className="absolute inset-[-40px] pointer-events-none overflow-hidden transition-transform duration-200 ease-out will-change-transform z-0"
+        className="absolute inset-[-80px] pointer-events-none overflow-hidden transition-transform duration-300 ease-out will-change-transform z-0 flex flex-col justify-center gap-6 sm:gap-8 opacity-45"
         style={{ 
-          transform: `translate3d(${parallaxX}px, ${parallaxY}px, 0) scale(1.06)`
+          transform: `translate3d(${parallaxX}px, ${parallaxY}px, 0) scale(1.04) rotate(-2deg)`
         }}
       >
-        <img 
-          src={`${import.meta.env.BASE_URL}hero-bg.jpg`} 
-          alt="Cinematic Background" 
-          className="w-full h-full object-cover object-center opacity-60 filter brightness-85 contrast-110"
-        />
+        {/* Track 1: Scrolling Left */}
+        <div className="relative flex overflow-hidden">
+          <div className="animate-marquee-left flex gap-5 shrink-0 items-center">
+            {[...heroProjectsRow1, ...heroProjectsRow1].map((p, idx) => (
+              <div 
+                key={`row1-${idx}`}
+                className="w-72 sm:w-88 aspect-video rounded-xl overflow-hidden border border-white/10 bg-[#121419] shadow-2xl relative shrink-0"
+              >
+                <img 
+                  src={p.img} 
+                  alt={p.title} 
+                  className="w-full h-full object-cover filter brightness-90 contrast-105"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
+                {/* Meta overlays */}
+                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[9px] font-mono text-white/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E03A3A]"></span>
+                  <span>{p.code}</span>
+                  <span className="text-white/40">•</span>
+                  <span>{p.timecode}</span>
+                </div>
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-white/90">
+                  <span className="font-serif italic text-sm text-white truncate max-w-[70%]">{p.title}</span>
+                  <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/70 font-mono">{p.tag}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Track 2: Scrolling Right */}
+        <div className="relative flex overflow-hidden">
+          <div className="animate-marquee-right flex gap-5 shrink-0 items-center">
+            {[...heroProjectsRow2, ...heroProjectsRow2].map((p, idx) => (
+              <div 
+                key={`row2-${idx}`}
+                className="w-72 sm:w-88 aspect-video rounded-xl overflow-hidden border border-white/10 bg-[#121419] shadow-2xl relative shrink-0"
+              >
+                <img 
+                  src={p.img} 
+                  alt={p.title} 
+                  className="w-full h-full object-cover filter brightness-90 contrast-105"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
+                {/* Meta overlays */}
+                <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2 py-0.5 rounded bg-black/70 backdrop-blur-md border border-white/10 text-[9px] font-mono text-white/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E03A3A]"></span>
+                  <span>{p.code}</span>
+                  <span className="text-white/40">•</span>
+                  <span>{p.timecode}</span>
+                </div>
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-white/90">
+                  <span className="font-serif italic text-sm text-white truncate max-w-[70%]">{p.title}</span>
+                  <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/70 font-mono">{p.tag}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Gradients to guarantee text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-[#0B0C0E]/50 to-[#0B0C0E]/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-[#0B0C0E]/70 to-[#0B0C0E]/85"></div>
         <div 
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(circle at center, transparent 30%, rgba(11, 12, 14, 0.75) 100%)'
+            background: 'radial-gradient(ellipse 950px 650px at center, rgba(11, 12, 14, 0.4) 0%, rgba(11, 12, 14, 0.88) 65%, #0B0C0E 100%)'
           }}
         ></div>
       </div>
