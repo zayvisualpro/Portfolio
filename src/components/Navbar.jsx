@@ -60,17 +60,6 @@ const Navbar = () => {
         {/* Right Tools & CTAs */}
         <div className="hidden md:flex items-center gap-4">
           
-          {/* Subtle Audio Stereo VU-Meter */}
-          <div className="hidden xl:flex items-center gap-2 font-mono text-[9px] text-white/40 bg-black/40 px-2.5 py-1.5 rounded-full border border-white/10">
-            <span className="text-[8px] tracking-wider text-white/30">AUDIO</span>
-            <div className="flex gap-0.5 items-end h-2.5 w-3.5">
-              <span className="w-0.5 bg-emerald-500 rounded-xs animate-[pulse_0.7s_infinite] h-[80%]"></span>
-              <span className="w-0.5 bg-emerald-500 rounded-xs animate-[pulse_0.5s_infinite] h-[95%]"></span>
-              <span className="w-0.5 bg-amber-400 rounded-xs animate-[pulse_0.9s_infinite] h-[65%]"></span>
-              <span className="w-0.5 bg-[#E03A3A] rounded-xs animate-[pulse_1.2s_infinite] h-[40%]"></span>
-            </div>
-            <span className="text-white/60">-12dB</span>
-          </div>
 
           {/* Quick CV Download Button */}
           <a

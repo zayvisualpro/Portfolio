@@ -185,14 +185,14 @@ html {
 .animate-marquee-left {
   display: flex !important;
   width: max-content !important;
-  animation: marqueeLeft 26s linear infinite !important;
+  animation: marqueeLeft 55s linear infinite !important;
   will-change: transform;
 }
 
 .animate-marquee-right {
   display: flex !important;
   width: max-content !important;
-  animation: marqueeRight 30s linear infinite !important;
+  animation: marqueeRight 62s linear infinite !important;
   will-change: transform;
 }
 
