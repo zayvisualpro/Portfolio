@@ -87,7 +87,7 @@ const About = () => {
                 <img
                   src={`${import.meta.env.BASE_URL}antony-photo.jpg`}
                   alt="Antony Raimbault - Monteur Vidéo"
-                  className="w-full h-full object-cover object-[center_26%] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-[center_18%] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent to-transparent opacity-80"></div>
