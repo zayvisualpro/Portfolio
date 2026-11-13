@@ -53,7 +53,7 @@ const Preloader = ({ onFinish }) => {
       {/* Top Bar: Film Meta */}
       <div className="flex items-center justify-between text-[11px] font-mono tracking-[0.25em] text-white/40 uppercase">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#E03A3A] animate-ping"></span>
+          <span className="w-2 h-2 rounded-full bg-[#E03A3A]"></span>
           <span className="text-white/70">REC // 24 FPS</span>
         </div>
         <div>
@@ -77,7 +77,7 @@ const Preloader = ({ onFinish }) => {
 
         {/* Expanding Red Accent Line */}
         <div className="w-32 sm:w-48 h-[2px] bg-gradient-to-r from-transparent via-[#E03A3A] to-transparent mx-auto relative overflow-hidden">
-          <div className="absolute inset-0 bg-white/80 animate-[shimmer_1.5s_infinite] w-full"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-shimmer w-full"></div>
         </div>
       </div>
 

@@ -86,6 +86,20 @@ html {
   animation: cardAppear 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
 /* Steady cinematic neon glow without flickering */
 .neon-broken {
   color: #FF4D4D;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,8 +10,6 @@ import TimelineScrubber from './components/TimelineScrubber';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 function App() {
-  const [introFinished, setIntroFinished] = useState(false);
-
   // Initialize intersection observer for smooth scroll reveals
   useScrollReveal();
 
@@ -21,14 +19,14 @@ function App() {
       <TimelineScrubber />
 
       {/* Cinematic Film Opening Preloader */}
-      <Preloader onFinish={() => setIntroFinished(true)} />
+      <Preloader />
 
       {/* 35mm Analog Film Grain Overlay */}
       <div className="film-grain" aria-hidden="true"></div>
 
       <Navbar />
       
-      <main className={`transition-opacity duration-1000 ${introFinished ? 'opacity-100' : 'opacity-90'}`}>
+      <main className="opacity-100">
         <Hero />
         <About />
         <Projects />
