@@ -86,63 +86,14 @@ html {
   animation: cardAppear 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Smooth organic neon hum & gentle flicker */
-@keyframes neonBroken {
-  0%, 100% {
-    opacity: 1;
-    color: #FF4D4D;
-    text-shadow:
-      0 0 8px rgba(255, 77, 77, 0.9),
-      0 0 22px rgba(239, 68, 68, 0.75),
-      0 0 45px rgba(224, 58, 58, 0.55),
-      0 0 75px rgba(224, 58, 58, 0.35);
-  }
-  30% {
-    opacity: 0.98;
-    text-shadow:
-      0 0 7px rgba(255, 77, 77, 0.85),
-      0 0 20px rgba(239, 68, 68, 0.7),
-      0 0 40px rgba(224, 58, 58, 0.5);
-  }
-  48% {
-    opacity: 1;
-  }
-  50.5% {
-    opacity: 0.72;
-    color: #E03A3A;
-    text-shadow:
-      0 0 4px rgba(255, 77, 77, 0.5),
-      0 0 12px rgba(239, 68, 68, 0.4);
-  }
-  53% {
-    opacity: 0.95;
-    text-shadow:
-      0 0 7px rgba(255, 77, 77, 0.85),
-      0 0 18px rgba(239, 68, 68, 0.65);
-  }
-  55.5% {
-    opacity: 0.68;
-    color: #D93B3B;
-    text-shadow:
-      0 0 3px rgba(255, 77, 77, 0.45),
-      0 0 10px rgba(239, 68, 68, 0.3);
-  }
-  60% {
-    opacity: 1;
-    color: #FF4D4D;
-    text-shadow:
-      0 0 8px rgba(255, 77, 77, 0.9),
-      0 0 22px rgba(239, 68, 68, 0.75),
-      0 0 45px rgba(224, 58, 58, 0.55),
-      0 0 75px rgba(224, 58, 58, 0.35);
-  }
-  80% {
-    opacity: 0.96;
-  }
-}
-
+/* Steady cinematic neon glow without flickering */
 .neon-broken {
-  animation: neonBroken 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  color: #FF4D4D;
+  text-shadow:
+    0 0 8px rgba(255, 77, 77, 0.9),
+    0 0 22px rgba(239, 68, 68, 0.75),
+    0 0 45px rgba(224, 58, 58, 0.55),
+    0 0 75px rgba(224, 58, 58, 0.35);
   display: inline-block;
 }
 

@@ -63,7 +63,7 @@ const Preloader = ({ onFinish }) => {
 
       {/* Center: Brand Typography Reveal */}
       <div className="text-center relative my-auto">
-        <span className="text-[10px] uppercase font-mono tracking-[0.4em] text-[#E03A3A] font-semibold block mb-3 animate-pulse">
+        <span className="text-[10px] uppercase font-mono tracking-[0.4em] text-[#E03A3A] font-semibold block mb-3">
           BTS AUDIOVISUEL • RECHERCHE D'ALTERNANCE
         </span>
 

@@ -1,16 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Hero = () => {
-  const [isRec, setIsRec] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
-
-  useEffect(() => {
-    // Smoothly toggle between ALTERNANCE and REC every 3.2 seconds
-    const interval = setInterval(() => {
-      setIsRec((prev) => !prev);
-    }, 3200);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -232,31 +223,9 @@ const Hero = () => {
         {/* Top Alternance Badge */}
         <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[11px] sm:text-[12px] text-white/90 mb-8 shadow-2xl hover:border-[#E03A3A]/40 transition-all duration-300 select-none">
           
-          {/* Morphing In-place Pill */}
-          <div className="bg-[#E03A3A] text-white font-bold text-[10px] uppercase py-1 px-3 rounded-full tracking-wider flex items-center justify-center transition-all duration-500 min-w-[88px] h-6 shadow-[0_0_12px_rgba(224,58,58,0.4)]">
-            <div className="relative flex items-center justify-center w-full">
-              {/* State 1: ALTERNANCE */}
-              <span 
-                className={`transition-all duration-500 absolute whitespace-nowrap ${
-                  isRec ? 'opacity-0 scale-90 pointer-events-none' : 'opacity-100 scale-100'
-                }`}
-              >
-                ALTERNANCE
-              </span>
-              
-              {/* State 2: REC (Cinema Camera Look) */}
-              <span 
-                className={`transition-all duration-500 flex items-center gap-1.5 whitespace-nowrap ${
-                  isRec ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'
-                }`}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                </span>
-                REC
-              </span>
-            </div>
+          {/* Alternance Pill */}
+          <div className="bg-[#E03A3A] text-white font-bold text-[10px] uppercase py-1 px-3 rounded-full tracking-wider flex items-center justify-center min-w-[88px] h-6 shadow-[0_0_12px_rgba(224,58,58,0.4)]">
+            <span>ALTERNANCE</span>
           </div>
 
           <span className="font-light tracking-wide text-white/90">
